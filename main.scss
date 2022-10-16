@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 1.6rem;
+}
+:root{
+    font-size: 62.5%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+ul{
+    visibility: hidden;
+    list-style: none;
+    position: absolute;
+    bottom: -20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    background-color: midnightblue;
+    width: 100%;
+    padding: 1.6rem;
+    opacity: 0;
+    transform: translatex(-5rem);
+    transition: all 600ms;
+    border-radius: 1.6rem;
+}
+
+li a{
+    text-decoration: none;
+    font-size: 1.8rem;
+    color:yellow;
+    font-family: sans-serif;
+    display: block;
+}
+
+li:hover{
+    background-color:blueviolet;
+}
+.show{
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translatey(0);
+    transition: all 300ms;
+}
+
+header{
+    padding: 32px;
+}
+
+button{
+background-image: url(assets/ant-design_menu-unfold-outlined.svg);
+width: 42px;
+height: 42px;
+background-repeat: no-repeat;
+background-position: center;
+border: none;
+background-color: transparent;
+cursor: pointer;
+}
+
+@media(min-width: 800px){
+    bottom{
+        display: none;
+    }
+
+    ul{
+        visibility: visible;
+        opacity: 1;
+        position: static;
+        background-color: transparent;
+        flex-direction: row;
+        transform: translate(0);
+        width: auto;
+
+    }
+
+    li a{
+        color: black;
+    }
+
+    li:hover{
+        background-color: transparent;
+    }
+
+    button{
+        display: none;
+    }
+
+}
